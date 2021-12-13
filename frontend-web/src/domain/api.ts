@@ -5,22 +5,22 @@ const api = axios.create({
     baseURL: "http://localhost:8090"
 })
 
-const getProducts = async (): Promise<iSorvete[]> => {
+const buscarSorvetes = async (): Promise<iSorvete[]> => {
     const response = await api.get("/sorvetes");
     return response.data;
 };
 
-const save = async (product: iSorvete): Promise<iSorvete> => {
+const salvarSorvete = async (product: iSorvete): Promise<iSorvete> => {
     const response = await api.post("/sorvetes", product)
     return response.data;
 }
 
-async function deleteProduct(id: number){
+async function deletarSorvete(id: number){
     await api.delete(`/sorvetes/${id}`)
 }
 
 export default {
-    deleteProduct,
-    getProducts,
-    save,
+    buscarSorvetes,
+    salvarSorvete,
+    deletarSorvete
 }

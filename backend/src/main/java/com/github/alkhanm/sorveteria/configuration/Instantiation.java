@@ -20,7 +20,10 @@ public class Instantiation implements CommandLineRunner {
     public void run(String... args) {
         sorveteRepository.deleteAll();
         sorveteRepository.saveAll(List.of(
-                new Sorvete(1L, "Morango", Categoria.FRUTAS, 120.90, 3)
+                new Sorvete(null, "Morango", Categoria.FRUTAS, 120.90, 3),
+                new Sorvete(null, "Laranja", Categoria.FRUTAS, 120.90, 3),
+                new Sorvete(null, "Baunilha", Categoria.LATICINIOS, 120.90, 3),
+                new Sorvete(null, "Chocolate", Categoria.FRUTAS, 120.90, 3)
         ));
     }
 }

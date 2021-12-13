@@ -1,12 +1,19 @@
 <template>
   <div id="nav">
-    <router-link id="product-list-link" to="/">Sorvetes</router-link> |
-    <router-link id="product-new-link" to="/sorvete-novo"
-      >Novo Sorvete</router-link
-    >
+    <Home />
   </div>
   <router-view />
 </template>
+
+<script>
+import Home from "@/views/Home.vue";
+
+export default {
+  components: {
+    Home,
+  },
+};
+</script>
 
 <style>
 body {
